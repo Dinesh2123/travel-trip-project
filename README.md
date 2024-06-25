@@ -1,127 +1,88 @@
-In this project let's build a **Travel Trip** by applying the concepts we have learned till now. This project allows you to practice the concepts and techniques learned till React Course and apply them in a concrete project.
+# Travel Trip
 
-You will demonstrate your skills by creating an app that will fetch data from an internal server using a component, routing concepts, authentication and authorization, and adding responsiveness to the website.
+This project is an individual assessment to build a **Travel Trip** app using React. The app will fetch data from an internal server, utilize routing concepts, handle authentication and authorization, and ensure responsiveness.
 
-This is an individual assessment. All work must be your own. You can request for the feedback after your project submission in the discussions.
+## Prerequisites
 
-### Prerequisites
-
-#### UI Prerequisites
+### UI Prerequisites
 
 <details>
 <summary>Click to view</summary>
 
-- What is Figma?
-  - Figma is a vector graphics editor and prototyping tool which is primarily web-based. You can check more info on the <a href="https://www.figma.com/" target="_blank">website</a>
-- Create a Free account in Figma.
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=hrHL2VLMl7g&t=37s" target="_blank">this</a> video to create a free Figma account. Watch the video upto **00:50**
-- How to Check CSS in Figma?
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=B242nuM3y2s" target="_blank">this</a> video to check CSS in a Figma screen. Watch the video upto **02:45**.
-- Export Images in Figma screen
-
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=NpzL1MONwaw" target="_blank">this</a> video to export images from a Figma screen.
-  - Click on the Export button to get Export options as shown in the below image.
-
-  <div style="text-align:center;margin:10px 0px 0px 45px;width:200px;">
-    <img src="https://assets.ccbp.in/frontend/react-js/figma-export-option.png" />
-  </div>
-
-- Upload your exported images from Figma to Cloudinary and get image URLs from Cloudinary. Refer <a href="https://www.figma.com/file/XoGFET0MdppCNgH6RhvcQe/Mini-Project---Travel-Trip?type=design&node-id=0-3523&mode=design&t=S89jMW84CTwn2Mkc-11" target="_blank">this</a> session for better understanding.
+- **Figma**: A vector graphics editor and prototyping tool. More info [here](https://www.figma.com/).
+- **Create a Free Figma Account**: Follow the instructions in [this video](https://www.youtube.com/watch?v=hrHL2VLMl7g&t=37s) up to 00:50.
+- **Check CSS in Figma**: Follow the instructions in [this video](https://www.youtube.com/watch?v=B242nuM3y2s) up to 02:45.
+- **Export Images in Figma**: Follow the instructions in [this video](https://www.youtube.com/watch?v=NpzL1MONwaw).
+- **Upload Images to Cloudinary**: Follow the session [here](https://www.figma.com/file/XoGFET0MdppCNgH6RhvcQe/Mini-Project---Travel-Trip?type=design&node-id=0-3523&mode=design&t=S89jMW84CTwn2Mkc-11) for better understanding.
 
 </details>
 
-#### Design Files
+### Design Files
 
 <details>
 <summary>Click to view</summary>
 
-- You can check the **Design Files** for different devices <a href="https://www.figma.com/file/XoGFET0MdppCNgH6RhvcQe/Mini-Project---Travel-Trip?type=design&node-id=0-3523&mode=design&t=S89jMW84CTwn2Mkc-11" target="_blank">here</a>.
+- Check the **Design Files** for different devices [here](https://www.figma.com/file/XoGFET0MdppCNgH6RhvcQe/Mini-Project---Travel-Trip?type=design&node-id=0-3523&mode=design&t=S89jMW84CTwn2Mkc-11).
 
 </details>
 
-### Set Up Instructions
+## Set Up Instructions
 
 <details>
 <summary>Click to view</summary>
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
+- Download dependencies by running:
+  ```bash
+  npm install
+  ```
+- Start the app using:
+  ```bash
+  npm start
+  ```
 </details>
 
-### Completion Instructions
+## Completion Instructions
 
 <details>
 <summary>Functionality to be added</summary>
 <br/>
-The app must have the following functionalities
 
-- **Login Route**
+### Login Route
 
-  - When an invalid credentials are provided and the **Login** button is clicked, then the respective error message received from the response should be displayed
-  - When a valid credentials are provided and the **Login** button is clicked, then the page should be navigated to the Home Route
-  - When an _unauthenticated_ user tries to access the Home Route, Book A New Trip Route and My Trips Route, then the page should be navigated to Login Route
-  - When an _authenticated_ user tries to access the Home Route, Book A New Trip Route and My Trips Route, then the page should be navigated to the respective route
-  - When an _authenticated_ user tries to access the Login Route, then the page should be navigated to the Home Route
-  - When the **Show Password** eye icon is clicked, then the password should be shown
-  - When the **Show Password** eye icon is clicked again, then the password should be masked
+- Display error message for invalid credentials.
+- Navigate to Home Route on valid credentials.
+- Redirect unauthenticated users to Login Route when accessing Home, Book A New Trip, or My Trips Routes.
+- Redirect authenticated users to Home, Book A New Trip, or My Trips Routes.
+- Redirect authenticated users from Login Route to Home Route.
+- Toggle password visibility using the eye icon.
 
-- **Home Route**
+### Home Route
 
-  - When an _authenticated_ user opens the Home Route
-    - Clicks on the **Book A New Trip** button, then the page should be navigated to the Book A New Trip Route
+- Navigate to Book A New Trip Route on clicking **Book A New Trip** button.
 
-- **Book A New Trip Route**
+### Book A New Trip Route
 
-  - When the Book A New Trip Route is opened, the user should be able to see a **Your Details** form with inputs **Name**, **Start Location**, **End Location** and **Next** button.
-    - **Your Details** step should be displayed as an active step as shown in the Figma.
-      - The user should be able to click the **Next** button. When clicked, the user should see
-        - The error message `Enter your name`, if the **Name** input is empty.
-        - The error message `Enter your start location`, if the **Start Location** input is empty.
-        - The error message `Enter your end location`, if the **End Location** input is empty.
-        - The **Date Selection** form should be displayed if the valid values are provided.
-    - **Your Details** step should be displayed as a completed step and **Date Selection** should be displayed as an active step as shown in the figma.
-    - In the **Date Selection** form, the user should be able to see a form with inputs **Start Date** and **End Date**.
-    - The user should be able to click the **Previous** button. When clicked, the user should see the Your Details Form and input values should be persisted and the user should be able to update the input values and submit them again.
-    - The user should be able to click the **Next** button. When clicked, the user should see
-      - The error message `Select start date`, if the **Start Date** input is empty.
-      - The error message `Select end date`, if the **End Date** input is empty.
-      - The error message `The end date cannot be less than the start date`, if the **End Date** input value is less than the **Start Date** input value.
-      - The **Guests** form should be displayed if the valid values are provided.
-    - **Your Details** and **Date Selection** steps should be displayed as completed steps.
-    - In the **Guests** section, the user should be able to see a section with **Adults**, **Children** and **Infants**.
-    - **Guests** should be displayed as an active step as shown in the figma.
-    - The user should be able to see
-      - By default, Adults are set to one (Considering the user) and can be increased, but cannot be decreased to a value less than one.
-      - By default, Children are set to zero and can be increased, but cannot be decreased to a value less than zero.
-      - By default, Infants are set to zero and can be increased, but cannot be decreased to a value less than zero.
-    - The user should be able to click the **Previous** button. When clicked, the user should see the Date Selection form and input values should be persisted and the user should be able to update the input values and submit them again.
-    - The user should be able to click the **Next** button. When clicked, the user should see the **Travel Assistance** form.
-    - In the **Travel Assistance** form, the user should be able to see a form with Travel assistance needed input.
-    - **Your Details, Date Selection** and **Guests** steps should be displayed as completed steps.
-    - **Travel Assistance** should be displayed as an active step as shown in figma.
-    - The user should be able to check the Travel Assistance Needed checkbox. When checked, the user should see Travel Assistance should be displayed, and able to select an option.
-    - The user should be able to click the **Previous** button. When clicked, the user should see the Guests and count should be persisted and the user should be able to update the counts.
-    - The user should be able to click the **Next** button. When clicked, the user should see the **Confirmation** form.
-    - In the **Confirmation** form, the user should be able to see all the steps details.
-    - **Your Details, Date Selection, Guests** and **Travel Assistance** steps should be displayed as completed steps.
-    - **Confirmation** should be displayed as an active step as shown in the figma.
-    - The user should be able to click the **Cancel** button. When clicked, the user should see the **Your Details** form with empty input values.
-    - The user should be able to click the **Confirm** button. When clicked, the user should see the Confirmed message and **Book New Trip** button to book a new trip.
+- Display **Your Details** form with Name, Start Location, End Location, and Next button.
+  - Show respective error messages for empty fields.
+  - Persist input values and navigate between steps.
+  - Validate dates and display **Date Selection** form.
+  - Handle **Guests** selection.
+  - Provide **Travel Assistance** options.
+  - Display **Confirmation** form with all details.
+  - Allow cancelling or confirming the trip booking.
 
-- **My Trips Route**
+### My Trips Route
 
-  - When the **My Trips** route is opened,
-    - The users should be able to see the Trips details in the cards as shown in the figma.
-    - If there is no trips created, then the No trips screen should be displayed as shown in the figma.
+- Display trip details in cards.
+- Show **No trips** screen if no trips are created.
 
-- **Header**
+### Header
 
-  - When the **website logo** text is clicked, then the page should be navigated to the Home Route
-  - When the **Home** link is clicked, then the page should be navigated to the Home Route
-  - When the **My Trips** link is clicked, then the page should be navigated to the My Trips Route
-  - When the **Logout** button is clicked, then the page should be navigated to the Login Route
+- Navigate to Home Route on clicking website logo.
+- Navigate to Home or My Trips Routes on clicking respective links.
+- Navigate to Login Route on clicking Logout button.
 
-- Users should be able to view the website responsively in mobile view, tablet view as well
+- Ensure responsive design for mobile and tablet views.
 
 </details>
 
@@ -129,146 +90,116 @@ The app must have the following functionalities
 <summary>API Requests & Responses</summary>
 <br/>
 
-**loginApiUrl**
+**Login API**
 
-#### API: `https://apis.ccbp.in/login`
-
-#### Method: `POST`
-
-#### Request:
-
-```json
-{
-  "username": "rahul",
-  "password": "rahul@2021"
-}
-```
-
-#### Description:
-
-Returns a response based on the credentials provided
-
-#### Sample Success Response
-
-```json
-{
-  "jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsIiwicm9sZSI6IlBSSU1FX1VTRVIiLCJpYXQiOjE2MTk2Mjg2MTN9. nZDlFsnSWArLKKeF0QbmdVfLgzUbx1BGJsqa2kc_21Y"
-}
-```
-
-#### Sample Failure Response
-
-```json
-{
-  "status_code": 404,
-  "error_msg": "Username is not found"
-}
-```
+- **URL**: `https://apis.ccbp.in/login`
+- **Method**: `POST`
+- **Request**:
+  ```json
+  {
+    "username": "rahul",
+    "password": "rahul@2021"
+  }
+  ```
+- **Success Response**:
+  ```json
+  {
+    "jwt_token": "sample_jwt_token"
+  }
+  ```
+- **Failure Response**:
+  ```json
+  {
+    "status_code": 404,
+    "error_msg": "Username is not found"
+  }
+  ```
 
 </details>
 
-### Important Note
+## Important Note
 
 <details>
 <summary>Click to view</summary>
 
-<br/>
+- **HTML Elements for Styling**: Use HTML elements to style React Components. Usage of `styled-components` is not supported.
+- **data-testid**: Use `data-testid` attribute in HTML elements.
+  - Example: `<div data-testid="questionItem" className="question-item"/>`
 
-**The following instructions are required for the tests to pass**
+- **Routes**:
+  - `Home` Route: `/`
+  - `My Trips` Route: `/my-trips`
+  - `Book A New Trip` Route: `/book-a-new-trip`
 
-- **Note:**
+- **Header**:
+  - Travel Trip Logo font-family: `Caveat`
 
-  - For Mini Projects, You have to use HTML elements to style the React Components. Usage of `styled-components` (CSS in JS) to style React components are not supported in Mini Projects. Test cases won't be passed, if you use styled components.
-  - Refer to the below Example for the usage of `data-testid` in the HTML elements
-    - Example: `<div data-testid="questionItem" className="question-item"/>`
+- **Login Route**:
+  - Logo font-family: `Caveat`
+  - Show password eye icon: `data-testid="show-password"`
 
-- **Routes**
+- **Book A New Trip Route**:
+  - Completed image alt attribute: value of `displayText` key from initial steps list.
+  - Confirmed message image alt attribute: `success`.
 
-  - `Home` Route should consist of `/` in the URL path
-  - `My Trips` Route should consist of `/my-trips` in the URL path
-  - `Book A New Trip` Route should consist of `/book-a-new-trip` in the URL path
+- **Not Found Route**:
+  - Not Found image alt attribute: `not found`
 
-  - **Header**
-
-    - The Travel Trip Logo text in Header should consist of font-family value as `Caveat`
-
-- **Login Route**
-
-  - The Travel Trip Logo text should consist of of font-family value as `Caveat`.
-  - The HTML button element with show password eye icon should have the `data-testid` attribute value as **show-password** to it
-
-- **Book A New Trip Route**
-
-  - The successfully completed image which displayed before the step should have the alt as the value of the key `displayText` from the initial steps list provided.
-  - The successfully completed image which displayed in the confirmed message should have the alt as **success**.
-
-- **Not Found Route**
-  - The Not Found image should consist of alt attribute value as `not found`
-- **Kindly follow the screens as shown in figma**
+- Follow the screens as shown in the Figma design.
 
 </details>
 
-### Resources
+## Resources
 
 <details>
 <summary>Image URLs</summary>
 
-[https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png](https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png)
+- [Success Image](https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png)
 
 </details>
 
 <details>
 <summary>Colors</summary>
 
-<br/>
-
 **Background Colors**:
-
-<div style="background-color: #3b82f6; width: 150px; padding: 10px; color: white">Hex: #3b82f6</div>
-<div style="background-color: #304766; width: 150px; padding: 10px; color: white">Hex: #304766</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: white">Hex: #ffffff</div>
-<div style="background-color: #2563eb; width: 150px; padding: 10px; color: white">Hex: #2563eb</div>
-<div style="background-color: #dbeafe; width: 150px; padding: 10px; color: white">Hex: #dbeafe</div>
-
-<br/>
+- ![#3b82f6](https://placehold.co/15x15/3b82f6/3b82f6.png) `#3b82f6`
+- ![#304766](https://placehold.co/15x15/304766/304766.png) `#304766`
+- ![#ffffff](https://placehold.co/15x15/ffffff/ffffff.png) `#ffffff`
+- ![#2563eb](https://placehold.co/15x15/2563eb/2563eb.png) `#2563eb`
+- ![#dbeafe](https://placehold.co/15x15/dbeafe/dbeafe.png) `#dbeafe`
 
 **Text Colors**:
+- ![#334155](https://placehold.co/15x15/334155/334155.png) `#334155`
+- ![#2563eb](https://placehold.co/15x15/2563eb/2563eb.png) `#2563eb`
+- ![#1e293b](https://placehold.co/15x15/1e293b/1e293b.png) `#1e293b`
+- ![#ffffff](https://placehold.co/15x15/ffffff/ffffff.png) `#ffffff`
+- ![#64748b](https://placehold.co/15x15/64748b/64748b.png) `#64748b`
+- ![#f1f5f9](https://placehold.co/15x15/f1f5f9/f1f5f9.png) `#f1f5f9`
+- ![#475569](https://placehold.co/15x15/475569/475569.png) `#475569`
 
-<div style="background-color: #334155; width: 150px; padding: 10px; color: black">Hex: #334155</div>
-<div style="background-color: #2563eb; width: 150px; padding: 10px; color: black">Hex: #2563eb</div>
-<div style="background-color: #1e293b; width: 150px; padding: 10px; color: black">Hex: #1e293b</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: white">Hex: #ffffff</div>
-<div style="background-color: #64748b; width: 150px; padding: 10px; color: white">Hex: #64748b</div>
-<div style="background-color: #f1f5f9; width: 150px; padding: 10px; color: white">Hex: #f1f5f9</div>
-<div style="background-color: #475569; width: 150px; padding: 10px; color: white">Hex: #475569</div>
-<br/>
-
-**Border Colors**
-
-<div style="background-color: #cbd5e1; width: 150px; padding: 10px; color: black">Hex: #cbd5e1</div>
-<div style="background-color: #e2e8f0; width: 150px; padding: 10px; color: black">Hex: #e2e8f0</div>
+**Border Colors**:
+- ![#cbd5e1](https://placehold.co/15x15/cbd5e1/cbd5e1.png) `#cbd5e1`
+- ![#e2e8f0](https://placehold.co/15x15/e2e8f0/e2e8f0.png) `#e2e8f0`
 
 </details>
 
 <details>
 <summary>Font-families</summary>
 
-- Caveat
-- Roboto
+- **Caveat**
+- **Roboto**
 
 </details>
 
-### Project Submission Instructions
+## Project Submission Instructions
 
-- For Mini Projects, you can submit the test cases at your own pace. But we suggest you to submit the code to know the percentage of completion through test cases and that score will be considered for your interviews.
+- Submit test cases at your own pace. The completion percentage will be considered for interviews.
+- Publish your code frequently.
 
-- Also it's important to publish your code frequently using `Step - 4` in the Instructions tab.
+### _Things to Keep in Mind_
 
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
-#   t r a v e l - t r i p - p r o j e c t  
- #   t r a v e l - t r i p - p r o j e c t  
- 
+- All components should go in the `src/components` directory.
+- **Do not remove pre-filled code**.
+- Review the Cheat Sheets for quick references on concepts.
+
+---
